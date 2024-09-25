@@ -7,7 +7,19 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-[#021526]">
-    <h1 class="font-bold text-center text-3xl text-white mt-8 mb-10">Manager selection voting system</h1>
+    <h1 class="font-bold text-center text-3xl text-white mt-8 mb-10">Manager Selection Voting System</h1>
+
+    {% for message in messages %}
+        {% if "success" in message.tags %}
+            <div class="p-4 text-green-800 text-center" role="alert">
+                <span class="font-medium">Success alert!</span> {{ message }}
+            </div>
+        {% elif "error" in message.tags %}
+            <div class="p-4 text-red-800 text-center" role="alert">
+                <span class="font-medium">Failed alert!</span> {{ message }}
+            </div>
+        {% endif %}
+    {% endfor %}
     <section>
         <div class="flex md:w-[50%] w-[70%] justify-center m-auto">
             <!-- contect form -->
