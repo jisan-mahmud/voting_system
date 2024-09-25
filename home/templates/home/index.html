@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#021526]">
+    <h1 class="font-bold text-center text-3xl text-white mt-8 mb-10">Manager selection voting system</h1>
+    <section>
+        <div class="flex md:w-[50%] w-[70%] justify-center m-auto">
+            <!-- contect form -->
+            <div id="contact" class="sm:w-3/5">
+                <form class="text-white" method="POST">
+                    {% csrf_token %}
+                    <div class="mt-4 mb-4">
+                        <label class="mb-4 font-bold">Enter Your Name:</label>
+                        <input name="voter_name" class="w-full p-3 rounded-lg focus:outline-none shadow bg-[#241f3775] border border-neutral-600 mt-4" type="text">
+                    </div>
+                    <div class="mt-4 mb-4">
+                        <label class="mb-4 font-bold">Participant:</label>
+                        <label class="flex items-center space-x-2 mt-3">
+                            <input name="participate_name" value="Atikur Rahman" class="shadow bg-[#241f3775] border border-neutral-600" type="radio"> 
+                            <span>Atikur Rahman</span>
+                        </label>
+                        <label class="flex items-center space-x-2">
+                            <input name="participate_name" value="Monir Khan" class="shadow bg-[#241f3775] border border-neutral-600" type="radio"> 
+                            <span>Monir Khan</span>
+                        </label>
+                    </div>
+                    <button id="shadow" class="bg-[#3F8E00] w-full p-3 mt-4 mb-4 sm:text-base text-sm sm:rounded-sm rounded-md font-bold" type="submit"><i class="fa-regular fa-paper-plane"></i> Vote</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
